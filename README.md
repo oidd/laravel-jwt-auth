@@ -32,7 +32,7 @@ Route::post('/example', function (Request $request) {
     return response()->json($request->user());
 });
 ```
-or 'validate()' method of Auth facade
+or use `validate()` method of `Auth` facade to check if user is retrieved successfully
 ```php
 Route::post('/example', function (Request $request) {
     return response()->json(\Illuminate\Support\Facades\Auth::validate($request->all()));
