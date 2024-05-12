@@ -32,11 +32,11 @@ class JwtGuard extends TokenGuard
     {
         parent::__construct($provider, $request, $inputKey, $storageKey);
 
-        if (empty(env('JWT_SECRET'))) {
-            throw new UnexpectedValueException('JWT_SECRET constant not defined in .env file.');
+        if (empty($secret = app()['config']['jwt.secret'])) {
+            throw new UnexpectedValueException('AUTH_JWT_SECRET_KEY constant not defined in .env file.');
         }
 
-        $this->secretKey = env('JWT_SECRET');
+        $this->secretKey = $secret;
     }
 
     public function user()
