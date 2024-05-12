@@ -1,0 +1,27 @@
+{
+    "name": "b6dbde/laravel-jwt-auth",
+    "description": "A simple realisation of JWT guard driver based on existing TokenGuard class and firebase/php-jwt package.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "LaravelJwtAuth\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LaravelJwtAuth\\JwtServiceProvider"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "b6dbde",
+            "email": "b6dbde@gmail.com"
+        }
+    ],
+    "require": {
+        "firebase/php-jwt": "^6.10"
+    }
+}
