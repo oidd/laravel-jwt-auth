@@ -81,7 +81,7 @@ class JwtGuard extends TokenGuard
     public function validateJWT(string $token) : StdClass | bool
     {
         try {
-            return JWT::decode($token, new Key('aboba', 'HS256'));
+            return JWT::decode($token, new Key($this->secretKey, 'HS256'));
         } catch (LogicException|UnexpectedValueException $e) {
             return false;
         }
