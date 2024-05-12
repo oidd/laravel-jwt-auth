@@ -41,7 +41,7 @@ Route::post('/example', function (Request $request) {
 
 ## Config explanations
 Package creates new `config/jwt.php` config file with a few entries. Let's look into them.
-1. 'input_key' – a field in request input that contains jwt token. Default value is 'api_token'.
-2. 'storage_key' – a field in user model (or just table) that contains user id. Default value is 'id'.
-3. 'token_key' – a field in jwt payload that contains user id. Default value is 'user_id'.
-4. 'secret' – a jwt secret key used for HS256 encryption and validation.
+1. input_key – a field in request input that contains jwt token. Default value is 'api_token'.
+2. storage_key – a field in user model (or just table) that contains user credential (id for example). Default value is 'id'.
+3. token_key – a field in jwt payload that contains user credential. Default value is 'user_id'.
+4. secret – a jwt secret key used for HS256 encryption and validation.
