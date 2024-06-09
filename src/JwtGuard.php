@@ -66,6 +66,15 @@ class JwtGuard extends TokenGuard
         return $user;
     }
 
+    // just returns boolean value if provided credentials are referring to user
+    public function attempt(array $credentials = []): bool
+    {
+        if (empty($u = $this->provider->retrieveByCredentials($credentials)))
+            return false;
+
+        return true;
+    }
+
     public function validate(array $credentials = [])
     {
         if (empty($credentials[$this->inputKey])) {
