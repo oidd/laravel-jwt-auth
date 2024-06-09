@@ -6,7 +6,7 @@ use Illuminate\Support\ServiceProvider;
 
 class JwtServiceProvider extends ServiceProvider
 {
-    public function register(): void
+    public function boot(): void
     {
         $authManager = app()->make('auth');
 
@@ -26,10 +26,7 @@ class JwtServiceProvider extends ServiceProvider
 
             return $guard;
         });
-    }
 
-    public function boot(): void
-    {
         $this->publishes([
             __DIR__.'/../config/jwt.php' => config_path('jwt.php'),
         ]);
